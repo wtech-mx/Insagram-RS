@@ -37,8 +37,23 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
 
-                        <!-- Authentication Links -->
                         <li class="nav-item mr-5">
+                            <form class="container h-100" action={{route('search.show')}}>
+                                <div class="row h-100 align-items-center">
+                                    <div class="col-md-12">
+                                        <input
+                                            type="search"
+                                            name="search"
+                                            class="form-control"
+                                            placeholder="search"
+                                        />
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+
+                        <!-- Authentication Links -->
+                        <li class="nav-item mr-5 mt-2">
                             <a href="{{route('posts.create')}}" class="btn btn-sm btn-success text-white">
                                <i class="fas fa-plus-circle"></i> Create a new post
                             </a>

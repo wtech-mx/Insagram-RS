@@ -118,4 +118,18 @@ class PostController extends Controller
 
         return Redirect::back();
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->get('search');
+
+        $posts = Post::where('title','like','%'. $search. '%')->paginate(1);
+        $posts->appends(['search' => $search]);
+
+        $posts2 = Post::where('title','like','%'. $search. '%')->paginate(1);
+        $posts2->appends(['search' => $search]);
+
+        return view('search.show',compact('posts','posts2','search'));
+
+    }
 }
