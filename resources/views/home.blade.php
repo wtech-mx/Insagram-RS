@@ -23,13 +23,27 @@
                             <div class="card mx-auto custom-card mb-5" id="prova">
                                 <div class="row post-header col-12 py-2 px-3">
                                     <div class="col-6 float-left "><h4>{{$news->title}}</h4></div>
-                                    <div class="col-6 float-right "><h4 class="text-right">{{$news->User->name}}</h4></div>
+                                        <div class="col-6 float-right ">
+                                            <a href="{{route('profile.show',$news->User->id)}}">
+                                                <h4 class="text-right">{{$news->User->name}}</h4>
+                                           </a>
+                                        </div>
+
                                 </div>
 {{--                                <a href="{{route('posts.show',['post'=>$news->id])}}">--}}
                                     <img class="card-img" src="{{asset('upload-img/'.$news->img)}}" alt="Card image cap" style="width: 600px">
 {{--                                </a>--}}
+                                             {{$news->Like}}
+                                        {{$news->Post}}
                                 <div class="card-body px-3">
-                                    <h5 class="card-title"><i class="far fa-heart"></i></h5>
+                                    <form method="POST" action="{{ route('likes.update',$news->id)  }}">
+                                        @csrf
+                                        @method('PUT')
+
+                                        <input type="hidden" name="post_id" id="status"  value="{{$news->id}}">
+                                         <input type="hidden" name="status" id="status"  value="1">
+                                        <button  type="submit"><i class="far fa-heart"></i></button>
+                                    </form>
                                 </div>
                                  <div class="row post-header px-3 pb-3">
                                      <div class="col-10 float-left text-left">Likes</div>
@@ -48,7 +62,11 @@
                             <div class="card mx-auto custom-card" id="prova">
                                 <div class="row post-header col-12 py-2 px-3">
                                     <div class="col-6 float-left "><h4>{{$new->title}}</h4></div>
-                                    <div class="col-6 float-right "><h4 class="text-right">{{$news->User->name}}</h4></div>
+                                    <div class="col-6 float-right ">
+                                        <a href="{{route('profile.show',$news->User->id)}}">
+                                                <h4 class="text-right">{{$news->User->name}}</h4>
+                                           </a>
+                                    </div>
                                 </div>
                                 <img class="card-img" src="{{asset('upload-img/'.$new->img)}}" alt="Card image cap">
                                 <div class="card-body px-3">
@@ -60,7 +78,7 @@
                                 </div>
                             </div>
                         </div>
-                     @endforeach
+                    @endforeach
 
                     </div>
                 </div>

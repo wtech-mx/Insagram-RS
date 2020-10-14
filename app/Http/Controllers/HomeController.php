@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\CategoryPosts;
+use App\Like;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -31,6 +32,8 @@ class HomeController extends Controller
         $new2 = Post::latest()->get();
 
         $category = CategoryPosts::all();
+
+
 
         $post= [];
 

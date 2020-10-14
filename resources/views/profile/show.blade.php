@@ -1,10 +1,5 @@
 @extends('layouts.app')
 
-@php
-Auth::user()->check;
-Auth::user()->id;
-@endphp
-
 @section('content')
 
                 <div class="container-fluid p-5">
@@ -20,16 +15,13 @@ Auth::user()->id;
 
                                 <div class="col-md-8">
                                     <div class="d-flex align-items-center mt-5">
-
-                                    {{$profile->biography}}
-
+                                        {{$profile->biography}}
                                     </div>
 
                                 </div>
                             </div>
 
-
-                            @if(Auth::user()->id == $profile->user_id)
+                            @if($profile->User->id == Auth::user()->id)
                                 <a href="{{route('profile.edit',$profile->id)}}" class="btn btn-light shadow btn-block mt-2">
                                         Update Profile
                                 </a>
@@ -62,7 +54,15 @@ Auth::user()->id;
                                         <img class="card-img" src="{{asset('upload-img/'.$post->img)}}" alt="Card image cap" style="width: 600px">
 {{--                                    </a>--}}
                                     <div class="card-body px-3">
-                                        <h5 class="card-title"><i class="far fa-heart"></i></h5>
+                                        <form method="POST" action="{{ route('likes.update',$post->id)  }}">
+                                            @csrf
+                                            @method('PUT')
+                                            {{$post->Like}}
+                                            {{$post->Post}}
+                                            <input type="hidden" name="post_id" id="status"  value="{{$post->id}}">
+                                             <input type="hidden" name="status" id="status"  value="1">
+                                            <button  type="submit"><i class="far fa-heart"></i></button>
+                                        </form>
                                     </div>
                                      <div class="row post-header px-3 pb-3">
                                          <div class="col-10 float-left text-left">Likes</div>

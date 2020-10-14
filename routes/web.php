@@ -37,3 +37,4 @@ Route::get('/profile/{profile}','ProfileController@show')->name('profile.show');
 Route::get('/profile/{profile}/edit','ProfileController@edit')->name('profile.edit');
 Route::put('/profile/{profile}','ProfileController@update')->name('profile.update');
 
+Route::put('/likes/{post}','LikeController@update')->name('likes.update');

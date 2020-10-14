@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Like extends Model
 {
     protected $fillable = [
-        'title', 'description','img','post_id',
+        'status','post_id',
     ];
 
     public function User()
@@ -15,14 +15,15 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-     public function Post()
+   public function Post()
     {
-        return $this->belongsTo(CategoryPosts::class);
+        return $this->belongsTo(Post::class);
     }
 
     public function Like()
     {
         return $this->belongsTo(Like::class);
     }
+
 
 }

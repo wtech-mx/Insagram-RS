@@ -12,6 +12,11 @@ use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $user = auth()->user();
@@ -31,6 +36,7 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+
 
         $data = $request->validate([
             'title' => 'required',
