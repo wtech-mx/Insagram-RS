@@ -20,9 +20,4 @@ class Post extends Model
         return $this->belongsTo(CategoryPosts::class);
     }
 
-    public function Like()
-    {
-        return $this->belongsTo(Like::class);
-    }
-
 }

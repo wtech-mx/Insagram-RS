@@ -17,7 +17,7 @@ class LikeController extends Controller
         ]);
 
 
-          auth()->user()->Like()->create([
+          auth()->user()->Like()->update([
             'status' => $data['status'],
              'post_id' => $data['post_id'],
           ]);

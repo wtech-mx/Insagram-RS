@@ -20,11 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd713099-12bc-4d2e-8bf3-5886987d0c42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/search/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Home.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Home.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LikeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LikeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +189,7 @@
       <workItem from="1602479321170" duration="7631000" />
       <workItem from="1602517407945" duration="43339000" />
       <workItem from="1602598235306" duration="33991000" />
-      <workItem from="1602684890184" duration="25060000" />
+      <workItem from="1602684890184" duration="39907000" />
     </task>
     <servers />
   </component>
@@ -226,9 +230,13 @@
     </state>
     <state x="-2186" y="191" width="583" height="849" key="find.popup/0.0.2560.1040/-2560.0.2560.1040@-2560.0.2560.1040" timestamp="1602702198914" />
     <state x="374" y="237" width="583" height="566" key="find.popup/0.0.2560.1040/-2560.0.2560.1040@0.0.2560.1040" timestamp="1602705265474" />
-    <state x="328" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1602711809157">
+    <state x="321" y="242" key="run.anything.popup" timestamp="1602723480110">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="328" y="229" width="672" height="678" key="search.everywhere.popup/0.0.2560.1040/-2560.0.2560.1040@0.0.2560.1040" timestamp="1602711809157" />
+    <state x="321" y="242" key="run.anything.popup/0.0.2560.1040/-2560.0.2560.1040@0.0.2560.1040" timestamp="1602723480110" />
+    <state x="328" y="229" width="672" height="678" key="search.everywhere.popup" timestamp="1602716723324">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="328" y="229" width="672" height="678" key="search.everywhere.popup/0.0.2560.1040/-2560.0.2560.1040@0.0.2560.1040" timestamp="1602716723324" />
   </component>
 </project>

@@ -33,16 +33,35 @@
 {{--                                <a href="{{route('posts.show',['post'=>$news->id])}}">--}}
                                     <img class="card-img" src="{{asset('upload-img/'.$news->img)}}" alt="Card image cap" style="width: 600px">
 {{--                                </a>--}}
-                                             {{$news->Like}}
-                                        {{$news->Post}}
+                                          <br>
+{{--                                        {{User->Like[0]}}--}}
+{{--                                        {{$news->User->Like[0]->status}}<br>--}}
+{{--                                        {{$news->User->Like[0]}}<br>--}}
+
+
+
                                 <div class="card-body px-3">
                                     <form method="POST" action="{{ route('likes.update',$news->id)  }}">
                                         @csrf
                                         @method('PUT')
-
                                         <input type="hidden" name="post_id" id="status"  value="{{$news->id}}">
-                                         <input type="hidden" name="status" id="status"  value="1">
-                                        <button  type="submit"><i class="far fa-heart"></i></button>
+                                        @foreach($likes as $like)
+                                            @if($like->post_id == $news->id)
+                                                @if(Auth::user()->id == $like->user_id)
+
+                                            <input type="hidden" name="status" id="status"  value="0">
+                                            <button class="btn btn-danger"  type="submit"><i class="far fa-heart"></i></button>
+
+                                            @else
+                                              <p>a</p>
+                                             <input type="hidden" name="status" id="status"  value="1">
+                                            <button class="btn btn-light"  type="submit"><i class="far fa-heart"></i></button>
+
+                                                @endif
+
+                                            @endif
+                                         @endforeach
+
                                     </form>
                                 </div>
                                  <div class="row post-header px-3 pb-3">
