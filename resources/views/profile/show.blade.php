@@ -49,6 +49,11 @@
                                 <div class="card mx-auto custom-card mb-5" id="prova">
                                     <div class="row post-header col-12 py-2 px-3">
                                         <div class="col-6 float-left "><h4>{{$post->title}}</h4></div>
+                                       <div class="col-6 float-right ">
+                                            <a href="{{route('profile.show',$post->User->id)}}">
+                                                <h4 class="text-right">{{$post->User->name}}</h4>
+                                           </a>
+                                        </div>
                                     </div>
 {{--                                    <a href="{{route('posts.show',['post'=>$post->id])}}">--}}
                                         <img class="card-img" src="{{asset('upload-img/'.$post->img)}}" alt="Card image cap" style="width: 600px">
@@ -57,8 +62,8 @@
                                         <form method="POST" action="{{ route('likes.update',$post->id)  }}">
                                             @csrf
                                             @method('PUT')
-                                            {{$post->Like}}
-                                            {{$post->Post}}
+{{--                                            {{$post->Like}}--}}
+{{--                                            {{$post->Post}}--}}
                                             <input type="hidden" name="post_id" id="status"  value="{{$post->id}}">
                                              <input type="hidden" name="status" id="status"  value="1">
                                             <button  type="submit"><i class="far fa-heart"></i></button>
@@ -105,6 +110,11 @@
                             <div class="card mx-auto custom-card" id="prova">
                                 <div class="row post-header col-12 py-2 px-3">
                                     <div class="col-6 float-left "><h4>{{$post2->title}}</h4></div>
+                                       <div class="col-6 float-right ">
+                                            <a href="{{route('profile.show',$post2->User->id)}}">
+                                                <h4 class="text-right">{{$post2->User->name}}</h4>
+                                           </a>
+                                        </div>
                                 </div>
                                 <img class="card-img" src="{{asset('upload-img/'.$post2->img)}}" alt="Card image cap">
                                 <div class="card-body px-3">
@@ -114,7 +124,7 @@
                                      <div class="col-10 float-left text-left">Likes</div>
                                     <div class="col-10 float-left text-left">{{$post2->description}}</div>
                                         <div class="col-1 float-right text-right">
-                                            <form action="{{ route('posts.destroy',$post->id)}}" method="POST">
+                                            <form action="{{ route('posts.destroy',$post2->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">

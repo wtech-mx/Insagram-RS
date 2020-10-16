@@ -38,8 +38,8 @@
 {{--                                <a href="{{route('posts.show',['post'=>$post->id])}}">--}}
                                     <img class="card-img" src="{{asset('upload-img/'.$post->img)}}" alt="Card image cap" style="width: 600px">
 {{--                                </a>--}}
-                                             {{$post->Like}}
-                                        {{$post->Post}}
+{{--                                             {{$post->Like}}--}}
+{{--                                        {{$post->Post}}--}}
                                 <div class="card-body px-3">
                                     <form method="POST" action="{{ route('likes.update',$post->id)  }}">
                                         @csrf

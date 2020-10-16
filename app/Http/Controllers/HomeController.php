@@ -27,7 +27,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Request $request)
+    public function index(Request $request,Post $post)
     {
         $new = Post::latest()->get();
         $new2 = Post::latest()->get();
@@ -36,9 +36,7 @@ class HomeController extends Controller
 
         $category = CategoryPosts::all();
 
-        $users = User::latest()->get();
-
-
+        $posts = auth()->user()->Post;
 
         $post= [];
 
@@ -46,6 +44,6 @@ class HomeController extends Controller
             $post[ Str::slug( $category->name ) ][] = Post::where('post_id', $category->id )->take(3)->get();
         }
 
-         return view('home', compact('new','new2' ,'post','likes','users'));
+         return view('home', compact('new','new2' ,'likes','posts'));
     }
 }
